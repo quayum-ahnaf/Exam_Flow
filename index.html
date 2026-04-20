@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI</title>
+    <meta
+      name="description"
+      content="ExamFlow AI creates a premium exam countdown, study planner, spaced revision engine, and recovery-focused timeline."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>Premium study OS</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="countdown.html">Countdown</a>
+        <a href="planner.html">Planner</a>
+        <a href="revisions.html">Revisions</a>
+        <a href="recovery.html">Recovery</a>
+        <a href="focus.html">Focus</a>
+        <a href="rescheduler.html">What-if</a>
+        <a href="export.html">Export</a>
+      </nav>
+    </header>
+
+    <main class="home-layout">
+      <section class="hero-home glass reveal">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Exam countdown • adaptive plan • visually rich UI</p>
+          <h1>Turn a syllabus into a beautiful study system.</h1>
+          <p class="hero-copy">
+            Upload your topics, set the exam date, and let ExamFlow AI build a
+            modern timetable with priority scoring, backward planning, revision
+            spacing, mock tests, and recovery blocks.
+          </p>
+
+          <div class="hero-actions hero-actions-wrap">
+            <a class="button primary" href="planner.html">Open Planner</a>
+            <a class="button secondary" href="countdown.html">See Countdown</a>
+          </div>
+
+          <div class="quick-form glass-soft">
+            <label>
+              Exam date
+              <input id="homeExamDate" type="date" />
+            </label>
+            <label>
+              Daily hours
+              <input id="homeStudyHours" type="range" min="1" max="10" step="0.5" />
+            </label>
+            <button class="button primary glow" id="homeRefresh">Refresh Plan</button>
+          </div>
+        </div>
+
+        <aside class="countdown-card glass-soft floating-card">
+          <p class="eyebrow">Exam countdown</p>
+          <div class="countdown-ring">
+            <div>
+              <strong id="homeDaysLeft">--</strong>
+              <span>days left</span>
+            </div>
+          </div>
+          <div class="mini-grid" id="homeSnapshot"></div>
+        </aside>
+      </section>
+
+      <section class="feature-strip reveal" id="featureGrid"></section>
+
+      <section class="showcase-panel glass reveal">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Smart plan</p>
+            <h2>Clear chapter and time allocation</h2>
+          </div>
+          <span class="badge">Auto allocation</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Chapter</th>
+                <th>Time allocation</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody id="homeAllocationBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="showcase-panel glass reveal" id="aiPlannerPanel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">AI routine planner</p>
+            <h2>Personalized routine, notes, and backup plan</h2>
+          </div>
+          <div class="hero-actions">
+            <button class="button primary" id="aiGeneratePlan">Generate AI Plan</button>
+          </div>
+        </div>
+
+        <div class="ai-status-row">
+          <span class="badge subtle" id="aiStatus">Ready</span>
+          <span class="hint" id="aiProviderMeta"></span>
+        </div>
+
+        <div class="summary-card" id="aiSummaryCard">
+          <strong>AI overview</strong>
+          <p id="aiSummary">Generate a personalized plan from your exams and subjects.</p>
+        </div>
+
+        <div class="summary-grid" id="aiNotesGrid"></div>
+
+        <div class="table-wrap ai-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time block</th>
+                <th>What to do</th>
+                <th>Why this works</th>
+              </tr>
+            </thead>
+            <tbody id="aiRoutineTable"></tbody>
+          </table>
+        </div>
+
+        <div class="summary-grid" id="aiBackupGrid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
