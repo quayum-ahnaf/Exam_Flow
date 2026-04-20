@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI • What-if Rescheduler</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="rescheduler">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>What-if</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="countdown.html">Countdown</a>
+        <a href="planner.html">Planner</a>
+        <a href="revisions.html">Revisions</a>
+        <a href="recovery.html">Recovery</a>
+        <a href="focus.html">Focus</a>
+        <a href="export.html">Export</a>
+      </nav>
+    </header>
+
+    <main class="page-layout two-col">
+      <section class="page-shell">
+        <section class="page-hero glass reveal">
+          <div>
+            <p class="eyebrow">Scenario planning</p>
+            <h1>Change the rules and watch the plan rebalance.</h1>
+            <p>
+              This page simulates exam shifts, reduced study hours, and lower
+              syllabus completion so you can see how the timetable responds.
+            </p>
+          </div>
+          <div class="summary-grid" id="whatIfResult"></div>
+        </section>
+
+        <section class="summary-grid" id="whatIfTable"></section>
+      </section>
+
+      <aside class="side-rail glass reveal">
+        <div class="form-card">
+          <label>
+            Exam date
+            <input id="reschedulerExamDate" type="date" />
+          </label>
+          <label>
+            Available hours
+            <input id="reschedulerStudyHours" type="range" min="1" max="10" step="0.5" />
+          </label>
+          <label>
+            Confidence boost
+            <input id="reschedulerConfidence" type="range" min="0" max="4" step="0.5" />
+          </label>
+          <label>
+            Syllabus completion
+            <input id="reschedulerSyllabusCompletion" type="range" min="0" max="100" step="5" />
+          </label>
+          <label>
+            Shift exam date
+            <input id="reschedulerDateShift" type="range" min="-14" max="14" step="1" />
+          </label>
+          <label>
+            Recovery mode
+            <select id="reschedulerRecoveryMode">
+              <option value="balanced">Balanced</option>
+              <option value="aggressive">Aggressive</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+          <button class="button primary" id="reschedulerRefresh">Recalculate</button>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

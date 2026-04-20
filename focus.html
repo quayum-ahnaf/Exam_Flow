@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI • Focus</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="focus">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>Focus mode</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="countdown.html">Countdown</a>
+        <a href="planner.html">Planner</a>
+        <a href="revisions.html">Revisions</a>
+        <a href="recovery.html">Recovery</a>
+        <a href="rescheduler.html">What-if</a>
+        <a href="export.html">Export</a>
+      </nav>
+    </header>
+
+    <main class="page-layout two-col">
+      <section class="page-shell">
+        <section class="page-hero glass reveal">
+          <div>
+            <p class="eyebrow">Today-only task panel</p>
+            <h1>Keep the screen focused on one study block.</h1>
+            <p>
+              Focus mode strips away noise and surfaces the tasks due today with
+              a timer, checklist, and fast status controls.
+            </p>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-card"><strong id="focusNext">--</strong><span>next task</span></div>
+            <div class="metric-card"><strong id="focusMood">--</strong><span>workload</span></div>
+          </div>
+        </section>
+
+        <section class="focus-grid">
+          <article class="panel glass reveal">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Checklist</p>
+                <h2>Today’s tasks</h2>
+              </div>
+            </div>
+            <ul class="task-list" id="focusTasks"></ul>
+          </article>
+
+          <article class="timer-panel reveal">
+            <p class="eyebrow">Pomodoro timer</p>
+            <div class="timer-ring">
+              <div>
+                <strong id="focusTimer">25:00</strong>
+              </div>
+            </div>
+            <div class="timer-controls">
+              <button class="button primary" id="focusStart">Start</button>
+              <button class="button secondary" id="focusPause">Pause</button>
+              <button class="button secondary" id="focusReset">Reset</button>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <aside class="side-rail glass reveal">
+        <div class="summary-card">
+          <strong>Focus philosophy</strong>
+          <p>
+            One block at a time. Clear actions. No clutter. Perfect for the
+            moments when you need momentum more than perfection.
+          </p>
+        </div>
+        <div class="divider"></div>
+        <div class="summary-card">
+          <strong>Missed a task?</strong>
+          <p>
+            Press Missed on any item and the recovery page will generate a new
+            catch-up block automatically.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

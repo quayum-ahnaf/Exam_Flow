@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI • Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="planner">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>Planner</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="countdown.html">Countdown</a>
+        <a href="revisions.html">Revisions</a>
+        <a href="recovery.html">Recovery</a>
+        <a href="focus.html">Focus</a>
+        <a href="rescheduler.html">What-if</a>
+        <a href="export.html">Export</a>
+      </nav>
+    </header>
+
+    <main class="page-layout">
+      <section class="page-hero glass reveal">
+        <div>
+          <p class="eyebrow">Study plan builder</p>
+          <h1>Add exams and subjects in simple form.</h1>
+          <p>
+            No file upload needed. Just enter exam, chapters, your completion,
+            strength level, and confidence. ExamFlow auto-splits chapter-wise
+            time, adds revision periods, and generates recommendations.
+          </p>
+          <div class="hero-actions">
+            <button class="button primary" id="plannerRefresh">Regenerate plan</button>
+            <a class="button secondary" href="export.html">Export plan</a>
+          </div>
+        </div>
+        <div class="metrics-grid" id="plannerStats"></div>
+      </section>
+
+      <section class="page-layout two-col">
+        <article class="panel glass reveal">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Step 1</p>
+              <h2>Create exam</h2>
+            </div>
+          </div>
+          <div class="form-card">
+            <label>
+              Exam name
+              <input id="plannerExamName" type="text" placeholder="e.g. Physics Midterm" />
+            </label>
+            <label>
+              Exam date
+              <input id="plannerExamDateNew" type="date" />
+            </label>
+            <button class="button primary" id="plannerAddExam">Add exam</button>
+          </div>
+        </article>
+
+        <aside class="side-rail glass reveal">
+          <div class="form-card">
+            <label>
+              Active exam
+              <select id="plannerExamSelect"></select>
+            </label>
+            <label>
+              Confidence boost
+              <input id="plannerConfidence" type="range" min="0" max="4" step="0.5" />
+            </label>
+            <div class="divider"></div>
+            <p class="eyebrow">Global daily availability</p>
+            <label>
+              Day session start
+              <input id="plannerDayStart" type="time" />
+            </label>
+            <label>
+              Day session end
+              <input id="plannerDayEnd" type="time" />
+            </label>
+            <label>
+              Night session start
+              <input id="plannerNightStart" type="time" />
+            </label>
+            <label>
+              Night session end
+              <input id="plannerNightEnd" type="time" />
+            </label>
+            <div class="summary-card compact">
+              <strong id="plannerWindowHours">0.0h/day</strong>
+              <span>central study time used for all exams</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="page-layout two-col">
+        <article class="panel glass reveal">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Step 2</p>
+              <h2>Add subject details</h2>
+            </div>
+          </div>
+          <div class="form-card">
+            <label>
+              Subject
+              <input id="plannerSubjectName" type="text" placeholder="e.g. Mathematics" />
+            </label>
+            <label>
+              Total chapters
+              <input id="plannerTotalChapters" type="number" min="1" step="1" placeholder="e.g. 12" />
+            </label>
+            <label>
+              Completed chapters
+              <input id="plannerCompletedChapters" type="number" min="0" step="1" placeholder="e.g. 5" />
+            </label>
+            <label>
+              Strength level
+              <select id="plannerStrength">
+                <option value="weak">Weak</option>
+                <option value="neutral">Neutral</option>
+                <option value="strong">Strong</option>
+              </select>
+            </label>
+            <label>
+              Confidence (1-5)
+              <input id="plannerSubjectConfidence" type="range" min="1" max="5" step="1" />
+            </label>
+            <button class="button primary" id="plannerAddSubject">Add subject</button>
+          </div>
+        </article>
+
+        <aside class="side-rail glass reveal">
+          <div class="summary-grid" id="plannerRecommendations"></div>
+          <div class="divider"></div>
+          <div class="calendar-heatmap" id="plannerCalendar"></div>
+        </aside>
+      </section>
+
+      <section class="page-layout two-col">
+        <article class="panel glass reveal">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Auto priority scoring</p>
+              <h2>Study table</h2>
+            </div>
+            <span class="badge" id="plannerSummary">Ready</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Task</th>
+                  <th>Type</th>
+                  <th>Priority</th>
+                  <th>Confidence</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="plannerTable"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <aside class="side-rail glass reveal">
+          <div class="summary-card">
+            <strong>How planning works</strong>
+            <p>
+              Weak + low confidence + pending chapters get more time. Strong
+              subjects still get revision slots.
+            </p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

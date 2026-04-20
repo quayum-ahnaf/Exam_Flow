@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI • Countdown</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="countdown">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>Countdown</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="revisions.html">Revisions</a>
+        <a href="recovery.html">Recovery</a>
+        <a href="focus.html">Focus</a>
+        <a href="rescheduler.html">What-if</a>
+        <a href="export.html">Export</a>
+      </nav>
+    </header>
+
+    <main class="page-layout two-col">
+      <section class="page-shell">
+        <section class="page-hero glass reveal">
+          <div>
+            <p class="eyebrow">Exam countdown</p>
+            <h1>Track multiple exams live.</h1>
+            <p>
+              Every exam gets its own live countdown with days, hours, minutes,
+              and seconds. Add multiple exams and keep urgency visible.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="planner.html">Open planner</a>
+              <a class="button secondary" href="focus.html">Start focus mode</a>
+            </div>
+          </div>
+          <aside class="countdown-card glass-soft floating-card countdown-center">
+            <p class="eyebrow">Live countdown</p>
+            <button class="sand-timer" id="sandTimer" type="button" title="Click to switch to the next exam">
+              <div class="hourglass-frame">
+                <div class="hourglass-bulb top">
+                  <div class="sand-top"></div>
+                </div>
+                <div class="hourglass-neck">
+                  <div class="sand-stream"></div>
+                </div>
+                <div class="hourglass-bulb bottom">
+                  <div class="sand-bottom"></div>
+                </div>
+              </div>
+            </button>
+            <div class="countdown-box-grid" id="countdownBoxes">
+              <article class="count-box">
+                <small>Days</small>
+                <strong id="countBoxDays" class="count-val">00</strong>
+              </article>
+              <article class="count-box">
+                <small>Hours</small>
+                <strong id="countBoxHours" class="count-val">00</strong>
+              </article>
+              <article class="count-box">
+                <small>Minutes</small>
+                <strong id="countBoxMinutes" class="count-val">00</strong>
+              </article>
+              <article class="count-box">
+                <small>Seconds</small>
+                <strong id="countBoxSeconds" class="count-val">00</strong>
+              </article>
+            </div>
+            <div class="summary-card" id="countdownSummary"></div>
+          </aside>
+        </section>
+
+        <section class="metrics-grid" id="countdownPreview"></section>
+        <section class="feature-page-grid" id="countdownList"></section>
+      </section>
+
+      <aside class="side-rail glass reveal">
+        <div class="form-card">
+          <label>
+            Active exam
+            <select id="countdownExamSelect"></select>
+          </label>
+          <label>
+            New exam name
+            <input id="countdownExamName" type="text" placeholder="e.g. Chemistry Final" />
+          </label>
+          <label>
+            New exam date
+            <input id="countdownExamDateNew" type="date" />
+          </label>
+          <button class="button primary" id="countdownAddExam">Add exam</button>
+          <button class="button secondary" id="countdownRefresh">Refresh countdown</button>
+        </div>
+
+        <div class="summary-grid">
+          <div class="metric-card"><strong>Click timer</strong><span>Switch to next exam</span></div>
+          <div class="metric-card"><strong>Sand motion</strong><span>Top drains, bottom fills</span></div>
+          <div class="metric-card"><strong>Live sync</strong><span>Shared across pages</span></div>
+          <div class="metric-card"><strong>Auto update</strong><span>Updates every second</span></div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

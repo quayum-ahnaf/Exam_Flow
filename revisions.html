@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI • Revisions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="revisions">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>Revisions</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="countdown.html">Countdown</a>
+        <a href="planner.html">Planner</a>
+        <a href="recovery.html">Recovery</a>
+        <a href="focus.html">Focus</a>
+        <a href="rescheduler.html">What-if</a>
+        <a href="export.html">Export</a>
+      </nav>
+    </header>
+
+    <main class="page-layout two-col">
+      <section class="page-shell">
+        <section class="page-hero glass reveal">
+          <div>
+            <p class="eyebrow">Spaced repetition engine</p>
+            <h1>Rev-1, Rev-2, Rev-3 with clean visual rhythm.</h1>
+            <p>
+              The revision page highlights the spaced schedule, perfect for
+              students who want short, repeated recall cycles instead of a
+              chaotic cramming pile.
+            </p>
+          </div>
+          <div class="metrics-grid" id="revisionStats"></div>
+        </section>
+
+        <section class="feature-page-grid" id="revisionCards"></section>
+      </section>
+
+      <aside class="side-rail glass reveal">
+        <div class="form-card">
+          <label>
+            Exam date
+            <input id="revisionsExamDate" type="date" />
+          </label>
+          <button class="button primary" id="revisionsRefresh">Refresh revisions</button>
+        </div>
+        <div class="divider"></div>
+        <div class="revision-timeline" id="revisionTimeline"></div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

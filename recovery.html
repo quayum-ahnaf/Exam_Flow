@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI • Recovery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="recovery">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>Recovery</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="countdown.html">Countdown</a>
+        <a href="planner.html">Planner</a>
+        <a href="revisions.html">Revisions</a>
+        <a href="focus.html">Focus</a>
+        <a href="rescheduler.html">What-if</a>
+        <a href="export.html">Export</a>
+      </nav>
+    </header>
+
+    <main class="page-layout two-col">
+      <section class="page-shell">
+        <section class="page-hero glass reveal">
+          <div>
+            <p class="eyebrow">Missed-day recovery</p>
+            <h1>Auto-rebalance the plan after a bad day.</h1>
+            <p>
+              When a task is missed, the planner inserts a recovery block into
+              the timeline instead of letting the schedule collapse.
+            </p>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-card"><strong>Smart</strong><span>Recovery rebalance</span></div>
+            <div class="metric-card"><strong>Fast</strong><span>One-click reset</span></div>
+            <div class="metric-card"><strong>Stable</strong><span>Shares state across pages</span></div>
+            <div class="metric-card"><strong>Adaptive</strong><span>Buffer days included</span></div>
+          </div>
+        </section>
+
+        <section class="summary-grid" id="recoveryList"></section>
+      </section>
+
+      <aside class="side-rail glass reveal">
+        <div class="form-card">
+          <label>
+            Exam date
+            <input id="recoveryExamDate" type="date" />
+          </label>
+          <button class="button primary" id="recoveryRefresh">Refresh recovery view</button>
+        </div>
+        <div class="divider"></div>
+        <div class="summary-card">
+          <strong>How it works</strong>
+          <p>
+            Mark a task as missed in Focus mode. The next refresh adds a
+            recovery block with a safe spacing offset.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

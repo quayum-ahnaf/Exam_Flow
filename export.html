@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamFlow AI • Export</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="export">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <a class="brand brand-inline" href="index.html">
+        <div class="brand-mark">EF</div>
+        <div>
+          <p class="eyebrow">ExamFlow AI</p>
+          <strong>Export</strong>
+        </div>
+      </a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="countdown.html">Countdown</a>
+        <a href="planner.html">Planner</a>
+        <a href="revisions.html">Revisions</a>
+        <a href="recovery.html">Recovery</a>
+        <a href="focus.html">Focus</a>
+        <a href="rescheduler.html">What-if</a>
+      </nav>
+    </header>
+
+    <main class="page-layout two-col">
+      <section class="page-shell">
+        <section class="page-hero glass reveal">
+          <div>
+            <p class="eyebrow">Export and share</p>
+            <h1>Share the plan with a polished finish.</h1>
+            <p>
+              Export the timetable as CSV or print it as a clean PDF-friendly
+              layout. The preview below mirrors the final study plan.
+            </p>
+            <div class="hero-actions">
+              <button class="button primary" id="exportCsv">Download CSV</button>
+              <button class="button secondary" id="exportPdf">Print as PDF</button>
+            </div>
+          </div>
+          <div class="summary-grid">
+            <div class="metric-card"><strong>CSV</strong><span>Spreadsheet ready</span></div>
+            <div class="metric-card"><strong>PDF</strong><span>Print friendly</span></div>
+            <div class="metric-card"><strong>Clean</strong><span>Table-first output</span></div>
+            <div class="metric-card"><strong>Fast</strong><span>One click export</span></div>
+          </div>
+        </section>
+
+        <section class="panel glass reveal">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Plan preview</p>
+              <h2>Ready to export</h2>
+            </div>
+          </div>
+          <div class="timeline" id="exportPreview"></div>
+        </section>
+      </section>
+
+      <aside class="side-rail glass reveal">
+        <div class="form-card">
+          <label>
+            Exam date
+            <input id="exportExamDate" type="date" />
+          </label>
+          <button class="button primary" id="exportRefresh">Refresh export preview</button>
+        </div>
+        <div class="divider"></div>
+        <div class="summary-card">
+          <strong>Presentation-ready</strong>
+          <p>
+            The output is intentionally clean so it looks strong in screenshots,
+            client demos, and LinkedIn posts.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
