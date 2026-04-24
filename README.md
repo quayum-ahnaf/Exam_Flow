@@ -1,6 +1,6 @@
-# ExamFlow AI
+# ExamFlow Nova
 
-ExamFlow AI is a premium, multi-page study planner for turning a syllabus and exam date into a countdown, adaptive timetable, revision engine, recovery flow, focus mode, what-if rescheduler, and export-ready plan.
+ExamFlow Nova is a premium, multi-page study planner for turning a syllabus and exam date into a countdown, adaptive timetable, revision engine, recovery flow, focus mode, what-if rescheduler, and export-ready plan.
 
 ## Pages
 
@@ -30,15 +30,6 @@ This is a static HTML/CSS/JS website.
 
 - Open `index.html` directly, or
 - Use any static host (VS Code Live Server, GitHub Pages, Netlify, Vercel static, etc.)
-
-### AI setup (optional)
-
-The home page AI planner now calls providers directly from the browser.
-
-1. OpenRouter key and model (recommended)
-2. Groq key and model (optional fallback)
-
-Provider keys/models are configured in `app.js`.
 
 ## Files
 
