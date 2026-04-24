@@ -219,7 +219,6 @@ h4 { margin-bottom: 0; }
 }
 
 input[type="date"],
-input[type="file"],
 input[type="text"],
 input[type="number"],
 input[type="search"],
@@ -912,62 +911,6 @@ td { font-size: .92rem; }
   background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
   background-size: 200% 100%;
   animation: shimmer 4s linear infinite;
-}
-
-.ai-status-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-}
-
-#aiProviderMeta {
-  text-align: right;
-  max-width: 100%;
-  opacity: .86;
-}
-
-#aiNotesGrid,
-#aiBackupGrid {
-  margin-top: 14px;
-}
-
-.ai-note-card {
-  border-radius: 18px;
-  padding: 14px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid var(--line);
-  line-height: 1.6;
-}
-
-.ai-note-card strong {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.ai-table-wrap {
-  margin-top: 14px;
-}
-
-.ai-table-wrap td {
-  vertical-align: top;
-  line-height: 1.6;
-  font-size: .96rem;
-}
-
-.ai-loading {
-  position: relative;
-}
-
-.ai-loading::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
-  animation: shimmer 1.2s linear infinite;
-  pointer-events: none;
 }
 
 @keyframes drift {
